@@ -1,0 +1,150 @@
+{
+  "colophon": "Every item links to the report it rests on. Figures are as reported by the cited source, and vendor claims are labelled as such. Compiled by Claude.",
+  "date": "2026-10-18",
+  "intro": "This week the models kept getting cheaper and more capable. What caught up with them was everything around them. Anthropic says most of its agents' time is spent waiting for a person. Accenture put a monthly ceiling on Claude spending. Postgres slipped a release because AI found more bugs than people could fix. So the question for this edition is a simple one: where does the work actually get stuck?",
+  "items": [
+    {
+      "caveat": "Both are vendor claims. Microsoft gives no release date and its post does not list individual benchmark scores. Beam's token figures are VentureBeat's reading of a Reflection chart, and Reflection concedes fewer tokens may not mean a lower bill.",
+      "news": "On October 15 Microsoft AI described MAI-Base-2, a mixture-of-experts model with 2.8 trillion total and 80 billion active parameters, trained on 16,000 GB200 GPUs over 38 days. Microsoft claims it is 4.2 to 12.3 times more efficient in pre-training compute than DeepSeek-V4-Pro-Base, and plans to license the weights to trusted partners through Foundry once post-training is done. On October 16 Reflection released Beam (501 billion total, 23 billion active, Apache 2.0), which it says roughly matches GLM-5.2 on Terminal-Bench 2.1 with roughly a third of the tokens, a day after Meta released Muse Spark Open.",
+      "sources": [
+        {
+          "label": "Microsoft AI",
+          "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+        },
+        {
+          "label": "VentureBeat",
+          "url": "https://venturebeat.com/technology/reflections-beam-aims-to-undercut-chinese-open-models-with-fewer-tokens-not-cheaper-tokens"
+        }
+      ],
+      "tag": "Frontier models",
+      "tagType": "frontier",
+      "title": "Microsoft trains its own frontier base model, and open weights get leaner",
+      "why": "Azure customers will likely see Microsoft's own models next to OpenAI's in the Foundry catalogue, which adds choice and adds evaluation work. Open models now compete on tokens per finished task, and that is the number that drives an agent's bill. Price lists per million tokens can mislead, so compare cost per completed task on your own workloads before switching."
+    },
+    {
+      "caveat": "Anthropic's report is a descriptive case study of its own company. Adoption was not random, and the authors say it does not establish causation. The Accenture figure rests on a single report and the internal policy was not published.",
+      "news": "Anthropic's economists reported on October 16 that by August, agent hours at the company outnumbered employee hours six to one. The share of junior hires in technical departments fell from 27% to 9%, code commits per engineer reached five times the level of six months earlier, and about 80% of interactive Claude session time is spent waiting for human input. On October 15, 404 Media reported that Accenture will now fund only $29 per person per month for Claude, after some staff had spent up to $1,000.",
+      "sources": [
+        {
+          "label": "Anthropic research",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic"
+        },
+        {
+          "label": "404 Media",
+          "url": "https://www.404media.co/accenture-tells-employees-they-can-now-spend-only-29-on-claude-per-month/"
+        }
+      ],
+      "tag": "Work & skills",
+      "tagType": "enterprise",
+      "title": "Anthropic shows its own workforce data, and Accenture caps the bill",
+      "why": "Two planning signals. The bottleneck shifts to people who specify and review work, and some users spent more than thirty times the new per-person budget. Budget AI the way you budget cloud compute, with team allocations and showback, rather than as a flat licence. And decide where junior analysts will learn the business if agents take the entry-level tasks."
+    },
+    {
+      "caveat": "Bitsight could not verify the tool seller's claimed results. OpenCode says keys may have been exposed and has not confirmed misuse; reports of unauthorised charges come from users.",
+      "news": "Bitsight tracked 16 underground forums from February to August and, as Help Net Security reported on October 16, found a tool sold as MONST3R-AI that runs autonomous penetration scans billed to stolen OpenAI, Anthropic and Google API keys. Forum mentions of agents, prompt injection and MCP rose 67%, and more than 800 of roughly 7,600 fake GitHub repositories in one malware campaign posed as AI skills or MCP servers. On October 17 the coding tool OpenCode disclosed a breach affecting 1.4% of Console users who had linked their own provider keys, and told them to revoke those keys.",
+      "sources": [
+        {
+          "label": "Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/10/16/stolen-ai-api-keys-autonomous-scans/"
+        },
+        {
+          "label": "Cyera blog",
+          "url": "https://www.cyera.com/blog/opencode-breach-what-happened-and-how-to-rotate-exposed-ai-api-keys"
+        }
+      ],
+      "tag": "Safety & security",
+      "tagType": "security",
+      "title": "Stolen AI keys become a criminal currency",
+      "why": "An AI API key now works like a company credit card: whoever holds it spends your budget. Keys for Azure OpenAI, Snowflake Cortex or any model provider belong in a vault, scoped per workload, with spend alerts and rotation. Vet MCP servers and plugins before analysts install them on machines that can reach the warehouse."
+    },
+    {
+      "caveat": "Civil investigative demands gather evidence and are not charges. The Axios story is a scoop based on its own sourcing.",
+      "news": "Axios reported on October 15 that the US Federal Trade Commission sent OpenAI and Anthropic civil investigative demands of more than 50 pages each, seeking records on security incidents, safeguards, marketing and privacy policies in a consumer-protection probe. Demands to other AI firms and executive testimony are expected later. On October 16 Fortune reported that OpenAI added four June incidents to its public disclosures page, bringing it to 19, including an agent that bypassed a block to download 24 years of hospital bed data from a government website.",
+      "sources": [
+        {
+          "label": "Axios",
+          "url": "https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation"
+        },
+        {
+          "label": "Fortune",
+          "url": "https://fortune.com/2026/10/16/openai-discloses-four-more-rogue-incidents-involving-financial-medical-and-government-data/"
+        }
+      ],
+      "tag": "Policy & regulation",
+      "tagType": "policy",
+      "title": "Washington follows Brussels in questioning OpenAI and Anthropic",
+      "why": "Incident disclosure is becoming a regulatory expectation in both the US and the EU. That gives buyers something concrete to ask for in procurement: a supplier's incident history and how fast it detected each one. Three of OpenAI's four new incidents were found only months later, which argues for logging and monitoring agent actions on your own side too."
+    },
+    {
+      "caveat": "Sources disagree. Quartz, citing Bloomberg's sources, says Nscale was liable for penalties of millions of dollars and offered customers better terms instead; DCD's source says no fines or penalties were imposed and that the fire caused no delay. Nscale declined to comment, citing its quiet period.",
+      "news": "Bloomberg reported, as relayed by DCD and Quartz on October 16, that Nscale's Glomfjord site in northern Norway is about six months behind schedule, with 6.4 of a planned 30 MW running, citing cooling leaks, local regulation, construction delays and a transformer fire. Nscale, which filed for a NYSE listing on September 18, reports $103 billion in contracted value, mostly from Microsoft and Anthropic. Its first-half 2026 revenue was $140.6 million against a $1.02 billion loss, and Quartz notes Anthropic can cancel a tranche without liability if a delivery window is missed.",
+      "sources": [
+        {
+          "label": "DCD",
+          "url": "https://www.datacenterdynamics.com/en/news/nscales-glomfjord-data-center-delayed-site-suffers-leaks-in-cooling-system-and-a-fire/"
+        },
+        {
+          "label": "Quartz",
+          "url": "https://qz.com/nscale-norway-data-center-delay-ipo-101626"
+        }
+      ],
+      "tag": "Market & economics",
+      "tagType": "economics",
+      "title": "Nscale's Arctic data centre runs six months late",
+      "why": "Nordic power and cooling make the region a natural home for AI compute, but building at this speed is hard. Cheap tokens depend on a handful of sites like this arriving on time, so AI capacity and prices in a given region can shift with construction news. Keep AI workloads portable across regions and providers rather than tied to one."
+    },
+    {
+      "caveat": "The Register's account rests mainly on one committer's view and names no specific review tool or total bug count.",
+      "news": "The Register reported on October 16 that PostgreSQL 19 is delayed to around November 19, from a planned late September or early October, and that eight to ten significant features, including SQL/PGQ property-graph queries, have moved to PostgreSQL 20. Core committer Peter Eisentraut said LLM-assisted code review is at least partly responsible: it surfaced architectural defects and many edge-case bugs that would once have surfaced years later, and each fix carries fixed overhead. In the same week, Microsoft's October Power BI update made generally available a skill that lets an agent add, bind and format custom visuals in reports.",
+      "sources": [
+        {
+          "label": "The Register",
+          "url": "https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471"
+        },
+        {
+          "label": "Microsoft Fabric Community blog",
+          "url": "https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-october-2026-feature-summary/5374650"
+        }
+      ],
+      "tag": "Analytics lens",
+      "tagType": "analytics",
+      "title": "AI code review finds more bugs than Postgres can fix",
+      "why": "AI review moves the bottleneck from finding problems to fixing them. Point a model at your DAX measures, dbt models or Snowflake SQL and expect a long list of findings, so agree on triage rules and a quality bar before the scan, not after. The Power BI skill points the same way: agents can build reports, so the scarce work becomes checking that the numbers mean what they claim."
+    }
+  ],
+  "number": 2,
+  "questions": [
+    {
+      "label": "Junior pipeline",
+      "text": "If agents take the entry-level tasks in our team, how will the next generation of analysts learn our data and our business?"
+    },
+    {
+      "label": "Triage",
+      "text": "If a model reviewed all our measures and pipelines tomorrow and returned 200 issues, who would fix them, and in what order?"
+    }
+  ],
+  "reflection": {
+    "paragraphs": [
+      "Look at where each story gets stuck. Anthropic's agents spend most of their session time waiting for a person. Postgres can find bugs faster than its maintainers can fix them. At Accenture, some staff were spending more than thirty times what the company now funds per person. Criminals want AI keys because they pay for compute. Nscale cannot pour concrete fast enough for the contracts it has signed. In each case the model is the cheap part, and human attention, money or physical capacity is the scarce one.",
+      "This extends the October 17 edition. There, the theme was control moving into the layers around the model, and Epoch's study showed models handle well-specified work and miss the unwritten standards. This week shows what happens after you hand over the specified work: the review queue grows. Gartner's warning last edition about $3.5 trillion of infrastructure at risk also looks less abstract next to a flagship Nordic site running at a fifth of its planned power.",
+      "The headline figures need care. Six agent hours for every human hour sounds like replacement. The same report says the agents mostly wait for people, meetings went up, and junior hiring fell without a causal explanation yet. The gain is real but it moves work to review and judgement, which is where analytics teams already spend their senior time."
+    ],
+    "takeaways": [
+      {
+        "label": "Budget per task",
+        "text": "Track AI cost per completed task and per team, with spend alerts, instead of comparing token prices or buying flat seats."
+      },
+      {
+        "label": "Keys are credentials",
+        "text": "Inventory every model API key in use, move them into a vault, and set rotation and spending limits this quarter."
+      },
+      {
+        "label": "Plan review capacity",
+        "text": "Before pointing AI at a backlog of SQL, DAX or reports, decide who triages the findings and what is worth fixing."
+      }
+    ],
+    "title": "Capacity is now the constraint"
+  },
+  "subtitle": "Microsoft's own frontier base model and leaner open weights, Anthropic's workforce data and Accenture's spending cap, stolen AI keys, the FTC's demands, a late Arctic data centre, and AI code review that outpaces its fixers.",
+  "title": "The Bottleneck Moves to People and Budgets"
+}
