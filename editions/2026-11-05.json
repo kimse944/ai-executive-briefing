@@ -1,0 +1,150 @@
+{
+  "colophon": "Every item links to the report it rests on. Figures are as reported by the cited source, and vendor claims are labelled as such. Compiled by Claude.",
+  "date": "2026-11-05",
+  "intro": "This week the AI story was mostly about money and measurement. Anthropic's amended IPO filing shows almost $900 billion committed to compute. On the buying side, Revolut moved its coding work to self-hosted models at a tenth of the cost, and Apple cut what its engineers may spend on AI each day. Meanwhile OpenAI put a price on finding a kernel exploit, and Anthropic published a way to check that you got the model you paid for. Read together, these items show what happens when AI moves from free experiment to a line in the budget.",
+  "items": [
+    {
+      "caveat": "Research prototype. Anthropic says it has no plans to deploy it, and it only works if labs choose to publish model fingerprints.",
+      "news": "On 2 November Anthropic released FlashProve, an open-source research prototype for provable inference. A provider commits to a model's weights and then attaches a cryptographic proof to each response that a user can check on an ordinary CPU, without seeing the weights. On a 400-billion-parameter open model the proofs cost roughly 70 to 95 times the normal GPU time, verification takes about 17 seconds, and context is limited to 1,024 tokens.",
+      "sources": [
+        {
+          "label": "Anthropic",
+          "url": "https://www.anthropic.com/research/provable-inference"
+        },
+        {
+          "label": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/"
+        }
+      ],
+      "tag": "Frontier labs",
+      "tagType": "frontier",
+      "title": "Anthropic publishes a way to prove which model produced an answer",
+      "why": "Most enterprise AI now runs through gateways and routers that can switch models behind the same endpoint, so today you rely on the vendor's word about which model answered. Proofs like this could one day make model identity something you audit, like a certificate, rather than trust. For now it is too slow and too limited for production, so the practical step is contractual: require vendors to disclose and log which model version served each request."
+    },
+    {
+      "caveat": "The Linux figures are OpenAI's own and not independently verified, and the exploits are not yet shipped kernel fixes. Anthropic has not said how Claude was used in the Xen finding.",
+      "news": "OpenAI said on 4 November that an automated pipeline running an unreleased cyber model reproduced 1,724 Linux kernel vulnerabilities in a mid-October run and produced 948 working privilege-escalation exploits, each with a candidate patch, for about $1.2 million in API costs, or roughly $1,279 per flaw. The same week the Xen Project issued advisory XSA-523 for two flaws that let a malicious virtual machine read and write other VMs' memory on the same host, and credited Anthropic with finding them using Claude.",
+      "sources": [
+        {
+          "label": "RuntimeWire",
+          "url": "https://runtimewire.com/article/openai-agents-948-linux-kernel-flaws"
+        },
+        {
+          "label": "Startup Fortune",
+          "url": "https://startupfortune.com/openais-ai-pipeline-turned-2308-linux-kernel-bugs-into-948-root-exploits/"
+        },
+        {
+          "label": "The Hacker News",
+          "url": "https://thehackernews.com/2026/11/xen-hypervisor-flaws-let-one-malicious.html"
+        }
+      ],
+      "tag": "Safety & security",
+      "tagType": "security",
+      "title": "AI finds serious bugs at industrial scale: 948 Linux root exploits and a Xen escape",
+      "why": "Finding exploitable bugs is becoming cheap, and attackers will get similar tools. Expect a steady stream of patches for operating systems and virtualisation layers that your data platforms run on, including in managed and on-premise environments. Patch latency on self-managed servers, gateways and VMs is now a bigger risk than it was a year ago, so check how fast your team can apply kernel and hypervisor fixes."
+    },
+    {
+      "caveat": "Revolut's figures come from a conference talk and were not independently verified. The Apple details are from Bloomberg's sources as relayed by 9to5Mac; it is unclear how much Apple will save.",
+      "news": "Revolut has made self-hosted open models its default for AI coding across about 2,000 engineers, running Z.ai's GLM models on its own GPUs at about $0.30 per million tokens, roughly a tenth of commercial coding tools, The Register reported on 3 November. Commercial models are kept for tasks GLM cannot do, such as vision. Separately, Bloomberg reported on 4 November that Apple cut some engineers' daily AI-tool cap from $300 to $200, may go to $100, and has considered $25 a day for some non-engineering teams.",
+      "sources": [
+        {
+          "label": "The Register",
+          "url": "https://www.theregister.com/ai-and-ml/2026/11/03/british-fintech-revolut-slashes-ai-coding-costs-10x-by-cutting-out-claude-and-going-self-hosted/5307345"
+        },
+        {
+          "label": "9to5Mac",
+          "url": "https://9to5mac.com/2026/11/04/report-apple-reduces-employees-ai-token-allowances-as-ternus-moves-to-cut-costs/"
+        }
+      ],
+      "tag": "Enterprise adoption",
+      "tagType": "enterprise",
+      "title": "Revolut cuts AI coding costs by 90% while Apple caps daily AI spend",
+      "why": "The free-for-all phase of internal AI use is ending, and finance teams will ask for cost per user and per task. Revolut's numbers show that routing most traffic to a cheaper or self-hosted model and keeping frontier models for exceptions can change the economics. If you are budgeting Copilot, Cortex or Claude usage for 2027, measure token spend per team now so caps are based on data rather than guesses."
+    },
+    {
+      "caveat": "Sources differ on the quarterly operating loss: Yahoo Finance reports $536 million, FilingInsights $567 million. Figures are from the company's own filing.",
+      "news": "Anthropic's amended IPO filing, published this week, shows revenue of about $17 billion for the quarter to 30 September, up from $11.6 billion in the June quarter, and $33.2 billion for nine months. It moved to an operating loss in the quarter after a $5 billion charge for short-term compute. Committed spending, almost all on compute and infrastructure, totals about $895.4 billion, with $69.8 billion due in the next 12 months.",
+      "sources": [
+        {
+          "label": "Yahoo Finance",
+          "url": "https://finance.yahoo.com/technology/article/anthropic-reveals-amended-s-1-outlining-huge-spending-commitments-rising-sales-153635825.html"
+        },
+        {
+          "label": "FilingInsights",
+          "url": "https://filinginsights.substack.com/p/anthropics-amended-s-1-adds-a-third"
+        }
+      ],
+      "tag": "Market & economics",
+      "tagType": "economics",
+      "title": "Anthropic's amended filing: $17 billion in a quarter, $895 billion committed to compute",
+      "why": "Revenue is growing fast, but the commitments are on a different scale, and that money has to come from customers over the next decade. Expect vendors to push hard on usage-based contracts and multi-year commitments. Keep your contracts short enough and your architecture portable enough that you can move workloads if prices or terms change."
+    },
+    {
+      "caveat": "The opinion is not binding. The Court's judgment will come later, and no date has been set.",
+      "news": "On 3 November Advocate General Maciej Szpunar gave his opinion in case C-250/25, a Hungarian publisher's suit against Google over Gemini. He said training a model is, as a rule, covered by the EU text and data mining exception. But a chatbot answer can infringe if the content was reached by getting around a paywall, or if the answer copies an article's expression so closely that readers no longer need the original. Providers can be liable when this is built into their business model or when they lack effective safeguards.",
+      "sources": [
+        {
+          "label": "Court of Justice of the EU",
+          "url": "https://curia.europa.eu/site/upload/docs/application/pdf/2026-11/cp260155en.pdf"
+        },
+        {
+          "label": "PPC Land",
+          "url": "https://ppc.land/googles-gemini-can-infringe-press-rights-in-2-ways-eu-court-adviser-says/"
+        }
+      ],
+      "tag": "Policy & regulation",
+      "tagType": "policy",
+      "title": "EU court adviser: chatbot answers can infringe press publishers' rights",
+      "why": "This is the first time the EU's top court is considering generative AI and copyright, and the line it draws will shape what enterprise AI tools may do with licensed content. If you feed paid market reports, industry news or price data into internal assistants or RAG systems, check that your licences allow it and that answers summarise facts rather than reproduce text."
+    },
+    {
+      "caveat": "Benchmark results on synthetic tasks. The spreadsheet-format finding was shown for small models trained on the task, not for the frontier models.",
+      "news": "On 3 November the Allen Institute for AI released StateBench, a benchmark for tracking how values change across a long document. Claude Opus 5.5, Gemini 3.8 Flash and OpenAI's GPT-6 Sol and Luna did well on simple cases but fell to 13% accuracy or lower on the longest, hardest problems, where each value can depend on others. Small models scored near perfect when a problem was framed as retrieval and near chance when the same problem was framed as spreadsheet edits.",
+      "sources": [
+        {
+          "label": "Ai2",
+          "url": "https://allenai.org/blog/statebench"
+        }
+      ],
+      "tag": "Analytics lens",
+      "tagType": "analytics",
+      "title": "Frontier models lose track of changing data in long inputs",
+      "why": "A lot of analytics work is exactly this kind of task: following a value through a chain of updates, joins and overrides in a long log, ledger or change history. Asking an assistant to reason over a long export is risky, even when it handles short versions well. Let the database do the state tracking and give the model the computed result, and test AI features on long, realistic inputs, not short demos."
+    }
+  ],
+  "number": 8,
+  "questions": [
+    {
+      "label": "Cost per answer",
+      "text": "If our AI budget were capped at $25 per person per day, which current AI uses would we keep, and how would we prove their value?"
+    },
+    {
+      "label": "Long inputs",
+      "text": "Where do we ask an AI assistant to reason over long change logs or exports that the database could compute more reliably?"
+    }
+  ],
+  "reflection": {
+    "paragraphs": [
+      "The common thread this week is that AI now has a price tag everyone can see. Anthropic has committed $895 billion to compute and has to sell enough tokens to pay for it. Apple and Revolut, two very different buyers, both decided that unlimited AI use was not worth it and put limits on it, one with caps and one by moving to cheaper models it hosts itself. OpenAI even priced a Linux exploit at about $1,279. When things get priced, people start asking whether they got what they paid for, and FlashProve is an early answer to that question.",
+      "This builds on earlier editions. On 26 October we covered falling API prices and a near-frontier open model, and on 2 November Mistral's open weights. Revolut is the first large example in this series of a company actually moving its main workload to an open model and reporting the savings. On 29 October Anthropic's first filing showed the cost of the frontier; this week's amendment puts a figure on the commitments behind those costs.",
+      "The gap between hype and reality shows up in StateBench. Vendors sell long context windows as if a model can hold a whole ledger in its head, yet the best models fall to 13% when values keep changing across a long input. Paying for a million-token context does not buy a million tokens of reliable reasoning."
+    ],
+    "takeaways": [
+      {
+        "label": "Measure token spend",
+        "text": "Start tracking AI spend per team and per use case now, so 2027 budgets and caps rest on real usage data."
+      },
+      {
+        "label": "Route by task",
+        "text": "Test whether a cheaper or self-hosted model can handle your most common AI workloads, and keep frontier models for the tasks that need them."
+      },
+      {
+        "label": "Patch faster",
+        "text": "Review how quickly your team applies kernel and hypervisor patches on self-managed data infrastructure, because AI is making exploitable bugs cheaper to find."
+      }
+    ],
+    "title": "From experiment to invoice"
+  },
+  "subtitle": "Anthropic shows how to prove which model answered you, AI finds hundreds of kernel bugs for about a thousand dollars each, Revolut and Apple put hard limits on AI spend, Anthropic's filing reveals $895 billion in compute commitments, an EU court adviser draws lines for chatbot answers, and a benchmark finds frontier models losing track of changing data.",
+  "title": "The Meter Is Running"
+}
