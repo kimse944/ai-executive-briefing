@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>AI Executive Briefing</title>
+<meta name="description" content="A twice-weekly briefing on what is really happening in AI, with a data and analytics lens. Every item links to its source.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d6b5f'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'%3EAI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="desk">
+  <aside class="index">
+    <div class="masthead">
+      <span class="name">AI Executive Briefing</span>
+      <span class="cadence">Mon &amp; Thu</span>
+    </div>
+    <p class="about">What is really happening in AI, with a data and analytics lens. Researched and written by Claude, reviewed before publishing. Every item links to the report it rests on.</p>
+    <ul class="ed-list" id="ed-list"></ul>
+    <div class="picker">
+      <label for="ed-picker">Edition</label>
+      <select id="ed-picker"></select>
+    </div>
+  </aside>
+  <main class="sheet" id="sheet">
+    <div class="empty">
+      <span class="eyebrow">Loading</span>
+      <h1>Editions appear here</h1>
+      <p>A new briefing is added every Monday and Thursday morning, newest first.</p>
+    </div>
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
